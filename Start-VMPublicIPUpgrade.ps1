@@ -8,6 +8,10 @@
 
     Because the Public IP allocation is set to 'Static' before detaching from the VM, the IP address will not change during the upgrade process,
     even in the event of a script failure.
+
+    Recovering from a failure:
+    The script exports the Public IP address and IP configuration associations to a CSV file before beginning the upgrade process. In the event
+    of a fauilure during the upgrade, this file can be used to manually reassociate any detached public IPs with the appropriate IP configuration.
 .NOTES
     VMs must not be associated with a Load Balancer to use this script
 .LINK
@@ -49,6 +53,11 @@ param (
     [Parameter(Mandatory = $true, ParameterSetName = 'VMResourceId')]
     [string]
     $vmResourceId,
+
+    # recovery log file path - log Public IP address and IP configuration associations for manual recovery scenario
+    [Parameter(Mandatory = $false)]
+    [string]
+    $recoveryLogFilePath = "PublicIPUpgrade_Recovery_$(Get-Date -Format 'yyyy-MM-dd-HH-mm').csv",
 
     # whatif
     [switch]
@@ -98,7 +107,10 @@ PROCESS {
     ForEach ($ipConfig in $vmNICs.IpConfigurations) {
         If ($ipConfig.PublicIPAddress) {
             $publicIPIDs += $ipConfig.PublicIPAddress.id
-            $publicIPIPConfigAssociations += @{publicIPId = $ipConfig.PublicIPAddress.id; ipConfig = $ipConfig}
+            $publicIPIPConfigAssociations += @{
+                publicIPId = $ipConfig.PublicIPAddress.id
+                ipConfig = $ipConfig
+                publicIPAddress = ''}
         }
     }
 
@@ -126,6 +138,14 @@ PROCESS {
     }
 
 # start upgrade process
+    # export recovery data
+    ForEach ($publicIP in $publicIPs) {
+        $publicIPIPConfigAssociations | Where-Object { $_.publicIPId -eq $publicIP.id } | ForEach-Object { 
+            $_.publicIPAddress = $publicIP.IpAddress 
+            
+            Add-Content -Path $recoveryLogFilePath -Value ('{0},{1},{2}' -f $_.publicIPAddress,$_.publicIPId,$_.ipConfig.id) -Force
+        }
+    }
 
     try {
         # set all public IPs to static assignment
@@ -167,7 +187,7 @@ PROCESS {
             $publicIP.Sku.Name = 'Standard'
 
             If (!$WhatIf) {
-                Set-AzPublicIpAddress -PublicIpAddress $publicIP
+                Set-AzPublicIpAddress -PublicIpAddress $publicIP | Out-Null
             }
             Else {
                 Write-Host "`tWhatIf: Set-AzPublicIpAddress -PublicIpAddress $($_.id)"
