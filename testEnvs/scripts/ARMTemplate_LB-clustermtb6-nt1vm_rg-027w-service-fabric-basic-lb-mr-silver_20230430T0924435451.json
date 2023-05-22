@@ -1,0 +1,406 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/loadBalancers/backendAddressPools",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm/LoadBalancerBEAddressPool",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm')]"
+      ],
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm/LoadBalancerBEAddressNatPool.0",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+        },
+        "frontendPort": 3389,
+        "backendPort": 3389,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm/LoadBalancerBEAddressNatPool.1",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+        },
+        "frontendPort": 3390,
+        "backendPort": 3389,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm/LoadBalancerBEAddressNatPool.2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+        },
+        "frontendPort": 3391,
+        "backendPort": 3389,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm/LoadBalancerBEAddressNatPool.3",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+        },
+        "frontendPort": 3392,
+        "backendPort": 3389,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm/LoadBalancerBEAddressNatPool.4",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+        },
+        "frontendPort": 3393,
+        "backendPort": 3389,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers",
+      "apiVersion": "2022-09-01",
+      "name": "LB-clustermtb6-nt1vm",
+      "location": "westus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.0')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.1')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.2')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.3')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.4')]"
+      ],
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "clustermtb6"
+      },
+      "sku": {
+        "name": "Basic",
+        "tier": "Regional"
+      },
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "LoadBalancerIPConfig",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027w-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/publicIPAddresses/PublicIP-LB-FE"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "LoadBalancerBEAddressPool",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]",
+            "properties": {}
+          }
+        ],
+        "loadBalancingRules": [
+          {
+            "name": "LBRule",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/loadBalancingRules/LBRule')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 19000,
+              "backendPort": 19000,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "enableTcpReset": false,
+              "loadDistribution": "Default",
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+              },
+              "backendAddressPools": [
+                {
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+                }
+              ],
+              "probe": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/FabricGatewayProbe')]"
+              }
+            }
+          },
+          {
+            "name": "LBHttpRule",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/loadBalancingRules/LBHttpRule')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 19080,
+              "backendPort": 19080,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "enableTcpReset": false,
+              "loadDistribution": "Default",
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+              },
+              "backendAddressPools": [
+                {
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+                }
+              ],
+              "probe": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/FabricHttpGatewayProbe')]"
+              }
+            }
+          },
+          {
+            "name": "AppPortLBRule1",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/loadBalancingRules/AppPortLBRule1')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 80,
+              "backendPort": 80,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "enableTcpReset": false,
+              "loadDistribution": "Default",
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+              },
+              "backendAddressPools": [
+                {
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+                }
+              ],
+              "probe": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/AppPortProbe1')]"
+              }
+            }
+          },
+          {
+            "name": "AppPortLBRule2",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/loadBalancingRules/AppPortLBRule2')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 8081,
+              "backendPort": 8081,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "enableTcpReset": false,
+              "loadDistribution": "Default",
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+              },
+              "backendAddressPools": [
+                {
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressPool')]"
+                }
+              ],
+              "probe": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/AppPortProbe2')]"
+              }
+            }
+          }
+        ],
+        "probes": [
+          {
+            "name": "FabricGatewayProbe",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/FabricGatewayProbe')]",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 19000,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2,
+              "probeThreshold": 1
+            }
+          },
+          {
+            "name": "FabricHttpGatewayProbe",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/FabricHttpGatewayProbe')]",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 19080,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2,
+              "probeThreshold": 1
+            }
+          },
+          {
+            "name": "AppPortProbe1",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/AppPortProbe1')]",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 80,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2,
+              "probeThreshold": 1
+            }
+          },
+          {
+            "name": "AppPortProbe2",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/probes/AppPortProbe2')]",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 8081,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2,
+              "probeThreshold": 1
+            }
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "LoadBalancerBEAddressNatPool.0",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.0')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          },
+          {
+            "name": "LoadBalancerBEAddressNatPool.1",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.1')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 3390,
+              "backendPort": 3389,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          },
+          {
+            "name": "LoadBalancerBEAddressNatPool.2",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.2')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 3391,
+              "backendPort": 3389,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          },
+          {
+            "name": "LoadBalancerBEAddressNatPool.3",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.3')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 3392,
+              "backendPort": 3389,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          },
+          {
+            "name": "LoadBalancerBEAddressNatPool.4",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'LB-clustermtb6-nt1vm', 'LoadBalancerBEAddressNatPool.4')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              },
+              "frontendPort": 3393,
+              "backendPort": 3389,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          }
+        ],
+        "inboundNatPools": [
+          {
+            "name": "LoadBalancerBEAddressNatPool",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/inboundNatPools/LoadBalancerBEAddressNatPool')]",
+            "properties": {
+              "frontendPortRangeStart": 3389,
+              "frontendPortRangeEnd": 4500,
+              "backendPort": 3389,
+              "protocol": "Tcp",
+              "idleTimeoutInMinutes": 4,
+              "enableFloatingIP": false,
+              "enableTcpReset": false,
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'LB-clustermtb6-nt1vm'), '/frontendIPConfigurations/LoadBalancerIPConfig')]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "ProvisioningState": "Succeeded",
+  "Sku": {
+    "Name": "Basic",
+    "Tier": "Regional"
+  },
+  "FrontendIpConfigurations": [
+    {
+      "PrivateIpAddress": null,
+      "PrivateIpAllocationMethod": "Dynamic",
+      "PrivateIpAddressVersion": null,
+      "ProvisioningState": "Succeeded",
+      "Zones": [],
+      "InboundNatRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.0"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.1"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.2"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.3"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.4"
+        }
+      ],
+      "InboundNatPools": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatPools/LoadBalancerBEAddressNatPool"
+        }
+      ],
+      "OutboundRules": [],
+      "LoadBalancingRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBRule"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBHttpRule"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule1"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule2"
+        }
+      ],
+      "Subnet": null,
+      "PublicIpAddress": {
+        "ExtendedLocation": null,
+        "PublicIpAllocationMethod": null,
+        "Sku": null,
+        "IpConfiguration": null,
+        "DnsSettings": null,
+        "DdosSettings": {
+          "ProtectionMode": null,
+          "DdosProtectionPlan": null
+        },
+        "IpTags": [],
+        "IpAddress": null,
+        "PublicIpAddressVersion": null,
+        "IdleTimeoutInMinutes": null,
+        "Zones": [],
+        "ProvisioningState": null,
+        "PublicIpPrefix": null,
+        "ResourceGroupName": null,
+        "Location": null,
+        "ResourceGuid": null,
+        "Type": null,
+        "Tag": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/publicIPAddresses/PublicIP-LB-FE"
+      },
+      "PublicIPPrefix": null,
+      "GatewayLoadBalancer": null,
+      "Name": "LoadBalancerIPConfig",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+    }
+  ],
+  "BackendAddressPools": [
+    {
+      "ProvisioningState": "Succeeded",
+      "BackendIpConfigurations": [
+        {
+          "PrivateIpAddressVersion": null,
+          "LoadBalancerBackendAddressPools": [],
+          "LoadBalancerInboundNatRules": [],
+          "Primary": false,
+          "ApplicationGatewayBackendAddressPools": [],
+          "ApplicationSecurityGroups": [],
+          "VirtualNetworkTaps": [],
+          "PrivateLinkConnectionProperties": null,
+          "GatewayLoadBalancer": null,
+          "PrivateIpAddress": null,
+          "PrivateIpAllocationMethod": null,
+          "Subnet": null,
+          "PublicIpAddress": null,
+          "ProvisioningState": null,
+          "Name": null,
+          "Etag": null,
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/0/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+        },
+        {
+          "PrivateIpAddressVersion": null,
+          "LoadBalancerBackendAddressPools": [],
+          "LoadBalancerInboundNatRules": [],
+          "Primary": false,
+          "ApplicationGatewayBackendAddressPools": [],
+          "ApplicationSecurityGroups": [],
+          "VirtualNetworkTaps": [],
+          "PrivateLinkConnectionProperties": null,
+          "GatewayLoadBalancer": null,
+          "PrivateIpAddress": null,
+          "PrivateIpAllocationMethod": null,
+          "Subnet": null,
+          "PublicIpAddress": null,
+          "ProvisioningState": null,
+          "Name": null,
+          "Etag": null,
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/1/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+        },
+        {
+          "PrivateIpAddressVersion": null,
+          "LoadBalancerBackendAddressPools": [],
+          "LoadBalancerInboundNatRules": [],
+          "Primary": false,
+          "ApplicationGatewayBackendAddressPools": [],
+          "ApplicationSecurityGroups": [],
+          "VirtualNetworkTaps": [],
+          "PrivateLinkConnectionProperties": null,
+          "GatewayLoadBalancer": null,
+          "PrivateIpAddress": null,
+          "PrivateIpAllocationMethod": null,
+          "Subnet": null,
+          "PublicIpAddress": null,
+          "ProvisioningState": null,
+          "Name": null,
+          "Etag": null,
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/2/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+        },
+        {
+          "PrivateIpAddressVersion": null,
+          "LoadBalancerBackendAddressPools": [],
+          "LoadBalancerInboundNatRules": [],
+          "Primary": false,
+          "ApplicationGatewayBackendAddressPools": [],
+          "ApplicationSecurityGroups": [],
+          "VirtualNetworkTaps": [],
+          "PrivateLinkConnectionProperties": null,
+          "GatewayLoadBalancer": null,
+          "PrivateIpAddress": null,
+          "PrivateIpAllocationMethod": null,
+          "Subnet": null,
+          "PublicIpAddress": null,
+          "ProvisioningState": null,
+          "Name": null,
+          "Etag": null,
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/3/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+        },
+        {
+          "PrivateIpAddressVersion": null,
+          "LoadBalancerBackendAddressPools": [],
+          "LoadBalancerInboundNatRules": [],
+          "Primary": false,
+          "ApplicationGatewayBackendAddressPools": [],
+          "ApplicationSecurityGroups": [],
+          "VirtualNetworkTaps": [],
+          "PrivateLinkConnectionProperties": null,
+          "GatewayLoadBalancer": null,
+          "PrivateIpAddress": null,
+          "PrivateIpAllocationMethod": null,
+          "Subnet": null,
+          "PublicIpAddress": null,
+          "ProvisioningState": null,
+          "Name": null,
+          "Etag": null,
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/4/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+        }
+      ],
+      "LoadBalancerBackendAddresses": [],
+      "LoadBalancingRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBRule"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBHttpRule"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule1"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule2"
+        }
+      ],
+      "OutboundRule": null,
+      "TunnelInterfaces": [],
+      "Name": "LoadBalancerBEAddressPool",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+    }
+  ],
+  "LoadBalancingRules": [
+    {
+      "Protocol": "Tcp",
+      "LoadDistribution": "Default",
+      "FrontendPort": 19000,
+      "BackendPort": 19000,
+      "IdleTimeoutInMinutes": 5,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "DisableOutboundSNAT": null,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendAddressPool": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+      },
+      "BackendAddressPools": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+        }
+      ],
+      "Probe": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/FabricGatewayProbe"
+      },
+      "Name": "LBRule",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBRule"
+    },
+    {
+      "Protocol": "Tcp",
+      "LoadDistribution": "Default",
+      "FrontendPort": 19080,
+      "BackendPort": 19080,
+      "IdleTimeoutInMinutes": 5,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "DisableOutboundSNAT": null,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendAddressPool": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+      },
+      "BackendAddressPools": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+        }
+      ],
+      "Probe": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/FabricHttpGatewayProbe"
+      },
+      "Name": "LBHttpRule",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBHttpRule"
+    },
+    {
+      "Protocol": "Tcp",
+      "LoadDistribution": "Default",
+      "FrontendPort": 80,
+      "BackendPort": 80,
+      "IdleTimeoutInMinutes": 5,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "DisableOutboundSNAT": null,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendAddressPool": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+      },
+      "BackendAddressPools": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+        }
+      ],
+      "Probe": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/AppPortProbe1"
+      },
+      "Name": "AppPortLBRule1",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule1"
+    },
+    {
+      "Protocol": "Tcp",
+      "LoadDistribution": "Default",
+      "FrontendPort": 8081,
+      "BackendPort": 8081,
+      "IdleTimeoutInMinutes": 5,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "DisableOutboundSNAT": null,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendAddressPool": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+      },
+      "BackendAddressPools": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+        }
+      ],
+      "Probe": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/AppPortProbe2"
+      },
+      "Name": "AppPortLBRule2",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule2"
+    }
+  ],
+  "Probes": [
+    {
+      "Protocol": "Tcp",
+      "Port": 19000,
+      "IntervalInSeconds": 5,
+      "NumberOfProbes": 2,
+      "ProbeThreshold": 1,
+      "RequestPath": null,
+      "ProvisioningState": "Succeeded",
+      "LoadBalancingRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBRule"
+        }
+      ],
+      "Name": "FabricGatewayProbe",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/FabricGatewayProbe"
+    },
+    {
+      "Protocol": "Tcp",
+      "Port": 19080,
+      "IntervalInSeconds": 5,
+      "NumberOfProbes": 2,
+      "ProbeThreshold": 1,
+      "RequestPath": null,
+      "ProvisioningState": "Succeeded",
+      "LoadBalancingRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/LBHttpRule"
+        }
+      ],
+      "Name": "FabricHttpGatewayProbe",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/FabricHttpGatewayProbe"
+    },
+    {
+      "Protocol": "Tcp",
+      "Port": 80,
+      "IntervalInSeconds": 5,
+      "NumberOfProbes": 2,
+      "ProbeThreshold": 1,
+      "RequestPath": null,
+      "ProvisioningState": "Succeeded",
+      "LoadBalancingRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule1"
+        }
+      ],
+      "Name": "AppPortProbe1",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/AppPortProbe1"
+    },
+    {
+      "Protocol": "Tcp",
+      "Port": 8081,
+      "IntervalInSeconds": 5,
+      "NumberOfProbes": 2,
+      "ProbeThreshold": 1,
+      "RequestPath": null,
+      "ProvisioningState": "Succeeded",
+      "LoadBalancingRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/loadBalancingRules/AppPortLBRule2"
+        }
+      ],
+      "Name": "AppPortProbe2",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/probes/AppPortProbe2"
+    }
+  ],
+  "InboundNatRules": [
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 3389,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/0/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "LoadBalancerBEAddressNatPool.0",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.0"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 3390,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/1/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "LoadBalancerBEAddressNatPool.1",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.1"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 3391,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/2/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "LoadBalancerBEAddressNatPool.2",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.2"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 3392,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/3/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "LoadBalancerBEAddressNatPool.3",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.3"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 3393,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm/virtualMachines/4/networkInterfaces/NIC-0/ipConfigurations/NIC-0"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "LoadBalancerBEAddressNatPool.4",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatRules/LoadBalancerBEAddressNatPool.4"
+    }
+  ],
+  "InboundNatPools": [
+    {
+      "Protocol": "Tcp",
+      "FrontendPortRangeStart": 3389,
+      "FrontendPortRangeEnd": 4500,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/frontendIPConfigurations/LoadBalancerIPConfig"
+      },
+      "Name": "LoadBalancerBEAddressNatPool",
+      "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatPools/LoadBalancerBEAddressNatPool"
+    }
+  ],
+  "OutboundRules": [],
+  "ExtendedLocation": null,
+  "ResourceGroupName": "rg-027-service-fabric-basic-lb-mr-silver",
+  "Location": "westus2",
+  "ResourceGuid": "92fff80b-17be-4137-b7ee-a40369c5b152",
+  "Type": "Microsoft.Network/loadBalancers",
+  "Tag": {
+    "clusterName": "clustermtb7",
+    "resourceType": "Service Fabric"
+  },
+  "Name": "LB-clustermtb7-nt1vm",
+  "Etag": "W/\u0022d8481e40-b1f1-4b59-80aa-482f767c11c8\u0022",
+  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm"
+}

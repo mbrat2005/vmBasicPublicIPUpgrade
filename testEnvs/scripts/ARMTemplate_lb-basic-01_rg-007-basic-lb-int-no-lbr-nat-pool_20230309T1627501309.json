@@ -1,0 +1,232 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/loadBalancers/backendAddressPools",
+      "apiVersion": "2022-07-01",
+      "name": "lb-basic-01/be-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01')]"
+      ],
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-07-01",
+      "name": "lb-basic-01/natpool-01.0",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+        },
+        "frontendPort": 9080,
+        "backendPort": 8080,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-07-01",
+      "name": "lb-basic-01/natpool-02.0.vmss-01-nic-01.ipconfig2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+        },
+        "frontendPort": 9180,
+        "backendPort": 8180,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "apiVersion": "2022-07-01",
+      "name": "lb-basic-01/natpool-03.0.vmss-01-nic-02.ipconfig1",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01')]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+        },
+        "frontendPort": 9280,
+        "backendPort": 3389,
+        "enableFloatingIP": false,
+        "idleTimeoutInMinutes": 4,
+        "protocol": "Tcp",
+        "enableTcpReset": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/loadBalancers",
+      "apiVersion": "2022-07-01",
+      "name": "lb-basic-01",
+      "location": "eastus",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'lb-basic-01', 'be-01')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'lb-basic-01', 'natpool-01.0')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'lb-basic-01', 'natpool-02.0.vmss-01-nic-01.ipconfig2')]",
+        "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'lb-basic-01', 'natpool-03.0.vmss-01-nic-02.ipconfig1')]"
+      ],
+      "sku": {
+        "name": "Basic",
+        "tier": "Regional"
+      },
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "fe-01",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/publicIPAddresses/pip-01"
+              }
+            }
+          },
+          {
+            "name": "fe-02",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-02')]",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/publicIPAddresses/pip-02"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "be-01",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'lb-basic-01', 'be-01')]",
+            "properties": {}
+          }
+        ],
+        "loadBalancingRules": [],
+        "probes": [
+          {
+            "name": "probe-01",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/probes/probe-01')]",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 80,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2,
+              "probeThreshold": 1
+            }
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "natpool-01.0",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'lb-basic-01', 'natpool-01.0')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+              },
+              "frontendPort": 9080,
+              "backendPort": 8080,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          },
+          {
+            "name": "natpool-02.0.vmss-01-nic-01.ipconfig2",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'lb-basic-01', 'natpool-02.0.vmss-01-nic-01.ipconfig2')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+              },
+              "frontendPort": 9180,
+              "backendPort": 8180,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          },
+          {
+            "name": "natpool-03.0.vmss-01-nic-02.ipconfig1",
+            "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', 'lb-basic-01', 'natpool-03.0.vmss-01-nic-02.ipconfig1')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+              },
+              "frontendPort": 9280,
+              "backendPort": 3389,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 4,
+              "protocol": "Tcp",
+              "enableTcpReset": false
+            }
+          }
+        ],
+        "inboundNatPools": [
+          {
+            "name": "natpool-01",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/inboundNatPools/natpool-01')]",
+            "properties": {
+              "frontendPortRangeStart": 9080,
+              "frontendPortRangeEnd": 9085,
+              "backendPort": 8080,
+              "protocol": "Tcp",
+              "idleTimeoutInMinutes": 4,
+              "enableFloatingIP": false,
+              "enableTcpReset": false,
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+              }
+            }
+          },
+          {
+            "name": "natpool-02",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/inboundNatPools/natpool-02')]",
+            "properties": {
+              "frontendPortRangeStart": 9180,
+              "frontendPortRangeEnd": 9185,
+              "backendPort": 8180,
+              "protocol": "Tcp",
+              "idleTimeoutInMinutes": 4,
+              "enableFloatingIP": false,
+              "enableTcpReset": false,
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+              }
+            }
+          },
+          {
+            "name": "natpool-03",
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/inboundNatPools/natpool-03')]",
+            "properties": {
+              "frontendPortRangeStart": 9280,
+              "frontendPortRangeEnd": 9285,
+              "backendPort": 3389,
+              "protocol": "Tcp",
+              "idleTimeoutInMinutes": 4,
+              "enableFloatingIP": false,
+              "enableTcpReset": false,
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', 'lb-basic-01'), '/frontendIPConfigurations/fe-01')]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

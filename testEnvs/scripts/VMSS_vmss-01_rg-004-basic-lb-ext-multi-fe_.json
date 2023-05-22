@@ -1,0 +1,172 @@
+{
+  "Sku": {
+    "Name": "Standard_DS1_v2",
+    "Tier": "Standard",
+    "Capacity": 1
+  },
+  "Plan": null,
+  "UpgradePolicy": {
+    "Mode": 1,
+    "RollingUpgradePolicy": {
+      "MaxBatchInstancePercent": 20,
+      "MaxUnhealthyInstancePercent": 20,
+      "MaxUnhealthyUpgradedInstancePercent": 20,
+      "PauseTimeBetweenBatches": "PT0S",
+      "EnableCrossZoneUpgrade": null,
+      "PrioritizeUnhealthyInstances": null,
+      "RollbackFailedInstancesOnPolicyBreach": false,
+      "MaxSurge": false
+    },
+    "AutomaticOSUpgradePolicy": {
+      "EnableAutomaticOSUpgrade": false,
+      "DisableAutomaticRollback": false,
+      "UseRollingUpgradePolicy": false
+    }
+  },
+  "AutomaticRepairsPolicy": {
+    "Enabled": false,
+    "GracePeriod": "PT30M",
+    "RepairAction": null
+  },
+  "ProvisioningState": "Succeeded",
+  "Overprovision": false,
+  "DoNotRunExtensionsOnOverprovisionedVMs": false,
+  "UniqueId": "b502d480-f1e6-4c46-9b65-4c868f218f97",
+  "SinglePlacementGroup": true,
+  "ZoneBalance": null,
+  "PlatformFaultDomainCount": 2,
+  "SpotRestorePolicy": null,
+  "ProximityPlacementGroup": null,
+  "HostGroup": null,
+  "AdditionalCapabilities": {
+    "UltraSSDEnabled": false,
+    "HibernationEnabled": null
+  },
+  "ScaleInPolicy": {
+    "Rules": [
+      "Default"
+    ],
+    "ForceDeletion": null
+  },
+  "Identity": null,
+  "Zones": null,
+  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-004-basic-lb-ext-multi-fe/providers/Microsoft.Compute/virtualMachineScaleSets/vmss-01",
+  "Name": "vmss-01",
+  "Type": "Microsoft.Compute/virtualMachineScaleSets",
+  "Location": "eastus",
+  "ExtendedLocation": null,
+  "Tags": {},
+  "VirtualMachineProfile": {
+    "OsProfile": {
+      "ComputerNamePrefix": "vmssvm",
+      "AdminUsername": "admin-vmss",
+      "AdminPassword": null,
+      "CustomData": null,
+      "WindowsConfiguration": {
+        "ProvisionVMAgent": true,
+        "EnableAutomaticUpdates": true,
+        "TimeZone": null,
+        "AdditionalUnattendContent": null,
+        "PatchSettings": null,
+        "WinRM": null,
+        "EnableVMAgentPlatformUpdates": false
+      },
+      "LinuxConfiguration": null,
+      "Secrets": [],
+      "AllowExtensionOperations": true,
+      "RequireGuestProvisionSignal": true
+    },
+    "StorageProfile": {
+      "ImageReference": {
+        "Publisher": "MicrosoftWindowsServer",
+        "Offer": "WindowsServer",
+        "Sku": "2022-Datacenter",
+        "Version": "latest",
+        "SharedGalleryImageId": null,
+        "CommunityGalleryImageId": null,
+        "Id": null
+      },
+      "OsDisk": {
+        "Name": null,
+        "Caching": 0,
+        "WriteAcceleratorEnabled": null,
+        "CreateOption": "FromImage",
+        "DiffDiskSettings": null,
+        "DiskSizeGB": 128,
+        "OsType": 0,
+        "Image": null,
+        "VhdContainers": null,
+        "ManagedDisk": {
+          "StorageAccountType": "Standard_LRS",
+          "DiskEncryptionSet": null,
+          "SecurityProfile": null
+        },
+        "DeleteOption": null
+      },
+      "DataDisks": null,
+      "DiskControllerType": null
+    },
+    "NetworkProfile": {
+      "HealthProbe": null,
+      "NetworkInterfaceConfigurations": [
+        {
+          "Name": "vmss-01-nic-01configuration-0",
+          "Primary": true,
+          "EnableAcceleratedNetworking": true,
+          "DisableTcpStateTracking": false,
+          "EnableFpga": null,
+          "NetworkSecurityGroup": null,
+          "DnsSettings": {
+            "DnsServers": []
+          },
+          "IpConfigurations": [
+            {
+              "Name": "ipconfig1",
+              "Subnet": {
+                "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-004-basic-lb-ext-multi-fe/providers/Microsoft.Network/virtualNetworks/vnet-01/subnets/subnet1"
+              },
+              "Primary": null,
+              "PublicIPAddressConfiguration": null,
+              "PrivateIPAddressVersion": "IPv4",
+              "ApplicationGatewayBackendAddressPools": null,
+              "ApplicationSecurityGroups": null,
+              "LoadBalancerBackendAddressPools": [
+                {
+                  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-004-basic-lb-ext-multi-fe/providers/Microsoft.Network/loadBalancers/lb-basic-01/backendAddressPools/be-01"
+                }
+              ],
+              "LoadBalancerInboundNatPools": null,
+              "Id": null
+            }
+          ],
+          "EnableIPForwarding": false,
+          "DeleteOption": null,
+          "Id": null
+        }
+      ],
+      "NetworkApiVersion": null
+    },
+    "DiagnosticsProfile": {
+      "BootDiagnostics": {
+        "Enabled": false,
+        "StorageUri": null
+      }
+    },
+    "SecurityProfile": null,
+    "ExtensionProfile": null,
+    "LicenseType": null,
+    "Priority": "Regular",
+    "EvictionPolicy": null,
+    "BillingProfile": null,
+    "ScheduledEventsProfile": {
+      "TerminateNotificationProfile": null,
+      "OsImageNotificationProfile": null
+    },
+    "CapacityReservation": null,
+    "UserData": null,
+    "ApplicationProfile": null
+  },
+  "OrchestrationMode": "Uniform",
+  "PriorityMixPolicy": null,
+  "FullyQualifiedDomainName": null
+}

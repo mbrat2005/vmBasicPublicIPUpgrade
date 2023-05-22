@@ -1,0 +1,280 @@
+{
+  "Sku": {
+    "Name": "Standard_D2_v3",
+    "Tier": "Standard",
+    "Capacity": 5
+  },
+  "Plan": null,
+  "UpgradePolicy": {
+    "Mode": 0,
+    "RollingUpgradePolicy": null,
+    "AutomaticOSUpgradePolicy": null
+  },
+  "AutomaticRepairsPolicy": null,
+  "ProvisioningState": "Succeeded",
+  "Overprovision": false,
+  "DoNotRunExtensionsOnOverprovisionedVMs": false,
+  "UniqueId": "55297382-15f5-4487-8d28-f2dafca5b376",
+  "SinglePlacementGroup": true,
+  "ZoneBalance": null,
+  "PlatformFaultDomainCount": null,
+  "SpotRestorePolicy": null,
+  "ProximityPlacementGroup": null,
+  "HostGroup": null,
+  "AdditionalCapabilities": null,
+  "ScaleInPolicy": null,
+  "Identity": null,
+  "Zones": null,
+  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm",
+  "Name": "nt1vm",
+  "Type": "Microsoft.Compute/virtualMachineScaleSets",
+  "Location": "westus2",
+  "ExtendedLocation": null,
+  "Tags": {
+    "resourceType": "Service Fabric",
+    "clusterName": "clustermtb7"
+  },
+  "VirtualMachineProfile": {
+    "OsProfile": {
+      "ComputerNamePrefix": "nt1vm",
+      "AdminUsername": "admin-sfc",
+      "AdminPassword": null,
+      "CustomData": null,
+      "WindowsConfiguration": {
+        "ProvisionVMAgent": true,
+        "EnableAutomaticUpdates": true,
+        "TimeZone": null,
+        "AdditionalUnattendContent": null,
+        "PatchSettings": null,
+        "WinRM": null,
+        "EnableVMAgentPlatformUpdates": false
+      },
+      "LinuxConfiguration": null,
+      "Secrets": [
+        {
+          "SourceVault": {
+            "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-core/providers/Microsoft.KeyVault/vaults/mtbintkv01"
+          },
+          "VaultCertificates": [
+            {
+              "CertificateUrl": "https://mtbintkv01.vault.azure.net/secrets/sf/43c3671760204b429ac24fdaf95e01a3",
+              "CertificateStore": "My"
+            }
+          ]
+        }
+      ],
+      "AllowExtensionOperations": true,
+      "RequireGuestProvisionSignal": true
+    },
+    "StorageProfile": {
+      "ImageReference": {
+        "Publisher": "MicrosoftWindowsServer",
+        "Offer": "WindowsServer",
+        "Sku": "2019-Datacenter",
+        "Version": "latest",
+        "SharedGalleryImageId": null,
+        "CommunityGalleryImageId": null,
+        "Id": null
+      },
+      "OsDisk": {
+        "Name": null,
+        "Caching": 1,
+        "WriteAcceleratorEnabled": null,
+        "CreateOption": "FromImage",
+        "DiffDiskSettings": null,
+        "DiskSizeGB": 127,
+        "OsType": 0,
+        "Image": null,
+        "VhdContainers": null,
+        "ManagedDisk": {
+          "StorageAccountType": "StandardSSD_LRS",
+          "DiskEncryptionSet": null,
+          "SecurityProfile": null
+        },
+        "DeleteOption": null
+      },
+      "DataDisks": null,
+      "DiskControllerType": null
+    },
+    "NetworkProfile": {
+      "HealthProbe": null,
+      "NetworkInterfaceConfigurations": [
+        {
+          "Name": "NIC-0",
+          "Primary": true,
+          "EnableAcceleratedNetworking": false,
+          "DisableTcpStateTracking": false,
+          "EnableFpga": null,
+          "NetworkSecurityGroup": null,
+          "DnsSettings": {
+            "DnsServers": []
+          },
+          "IpConfigurations": [
+            {
+              "Name": "NIC-0",
+              "Subnet": {
+                "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/virtualNetworks/VNet/subnets/Subnet-0"
+              },
+              "Primary": null,
+              "PublicIPAddressConfiguration": null,
+              "PrivateIPAddressVersion": "IPv4",
+              "ApplicationGatewayBackendAddressPools": null,
+              "ApplicationSecurityGroups": null,
+              "LoadBalancerBackendAddressPools": [
+                {
+                  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/backendAddressPools/LoadBalancerBEAddressPool"
+                }
+              ],
+              "LoadBalancerInboundNatPools": [
+                {
+                  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-027-service-fabric-basic-lb-mr-silver/providers/Microsoft.Network/loadBalancers/LB-clustermtb7-nt1vm/inboundNatPools/LoadBalancerBEAddressNatPool"
+                }
+              ],
+              "Id": null
+            }
+          ],
+          "EnableIPForwarding": false,
+          "DeleteOption": null,
+          "Id": null
+        }
+      ],
+      "NetworkApiVersion": null
+    },
+    "DiagnosticsProfile": null,
+    "SecurityProfile": null,
+    "ExtensionProfile": {
+      "Extensions": [
+        {
+          "Id": null,
+          "Name": "ServiceFabricNodeVmExt_vmNodeType0Name",
+          "ForceUpdateTag": null,
+          "Publisher": "Microsoft.Azure.ServiceFabric",
+          "Type": "ServiceFabricNode",
+          "TypeHandlerVersion": "1.0",
+          "AutoUpgradeMinorVersion": true,
+          "EnableAutomaticUpgrade": null,
+          "Settings": {
+            "clusterEndpoint": [],
+            "nodeTypeRef": [],
+            "dataPath": [],
+            "durabilityLevel": [],
+            "nicPrefixOverride": [],
+            "certificate": [
+              [
+                []
+              ],
+              [
+                []
+              ]
+            ]
+          },
+          "ProtectedSettings": null,
+          "ProvisioningState": null,
+          "ProvisionAfterExtensions": []
+        },
+        {
+          "Id": null,
+          "Name": "VMDiagnosticsVmExt_vmNodeType0Name",
+          "ForceUpdateTag": null,
+          "Publisher": "Microsoft.Azure.Diagnostics",
+          "Type": "IaaSDiagnostics",
+          "TypeHandlerVersion": "1.5",
+          "AutoUpgradeMinorVersion": true,
+          "EnableAutomaticUpgrade": null,
+          "Settings": {
+            "WadCfg": [
+              [
+                [
+                  [
+                    []
+                  ],
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              []
+                            ],
+                            [
+                              []
+                            ],
+                            [
+                              []
+                            ],
+                            [
+                              [
+                                [
+                                  []
+                                ]
+                              ]
+                            ]
+                          ],
+                          [
+                            [
+                              []
+                            ],
+                            [
+                              []
+                            ],
+                            [
+                              [
+                                [
+                                  []
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ],
+                      [
+                        [
+                          [
+                            [
+                              []
+                            ],
+                            [
+                              []
+                            ],
+                            [
+                              []
+                            ],
+                            [
+                              []
+                            ],
+                            [
+                              [
+                                [
+                                  []
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            "StorageAccount": []
+          },
+          "ProtectedSettings": null,
+          "ProvisioningState": null,
+          "ProvisionAfterExtensions": []
+        }
+      ]
+    },
+    "LicenseType": null,
+    "Priority": null,
+    "EvictionPolicy": null,
+    "BillingProfile": null,
+    "ScheduledEventsProfile": null,
+    "CapacityReservation": null,
+    "UserData": null,
+    "ApplicationProfile": null
+  },
+  "OrchestrationMode": "Uniform",
+  "PriorityMixPolicy": null,
+  "FullyQualifiedDomainName": null
+}

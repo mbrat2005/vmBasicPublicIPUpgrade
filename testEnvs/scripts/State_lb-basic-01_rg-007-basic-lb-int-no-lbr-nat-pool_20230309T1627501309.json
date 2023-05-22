@@ -1,0 +1,337 @@
+{
+  "ProvisioningState": "Succeeded",
+  "Sku": {
+    "Name": "Basic",
+    "Tier": "Regional"
+  },
+  "FrontendIpConfigurations": [
+    {
+      "PrivateIpAddress": null,
+      "PrivateIpAllocationMethod": "Dynamic",
+      "PrivateIpAddressVersion": null,
+      "ProvisioningState": "Succeeded",
+      "Zones": [],
+      "InboundNatRules": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatRules/natpool-01.0"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatRules/natpool-02.0.vmss-01-nic-01.ipconfig2"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatRules/natpool-03.0.vmss-01-nic-02.ipconfig1"
+        }
+      ],
+      "InboundNatPools": [
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatPools/natpool-01"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatPools/natpool-02"
+        },
+        {
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatPools/natpool-03"
+        }
+      ],
+      "OutboundRules": [],
+      "LoadBalancingRules": [],
+      "Subnet": null,
+      "PublicIpAddress": {
+        "ExtendedLocation": null,
+        "PublicIpAllocationMethod": null,
+        "Sku": null,
+        "IpConfiguration": null,
+        "DnsSettings": null,
+        "DdosSettings": {
+          "ProtectionMode": null,
+          "DdosProtectionPlan": null
+        },
+        "IpTags": [],
+        "IpAddress": null,
+        "PublicIpAddressVersion": null,
+        "IdleTimeoutInMinutes": null,
+        "Zones": [],
+        "ProvisioningState": null,
+        "PublicIpPrefix": null,
+        "ResourceGroupName": null,
+        "Location": null,
+        "ResourceGuid": null,
+        "Type": null,
+        "Tag": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/publicIPAddresses/pip-01"
+      },
+      "PublicIPPrefix": null,
+      "GatewayLoadBalancer": null,
+      "Name": "fe-01",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+    },
+    {
+      "PrivateIpAddress": null,
+      "PrivateIpAllocationMethod": "Dynamic",
+      "PrivateIpAddressVersion": null,
+      "ProvisioningState": "Succeeded",
+      "Zones": [],
+      "InboundNatRules": [],
+      "InboundNatPools": [],
+      "OutboundRules": [],
+      "LoadBalancingRules": [],
+      "Subnet": null,
+      "PublicIpAddress": {
+        "ExtendedLocation": null,
+        "PublicIpAllocationMethod": null,
+        "Sku": null,
+        "IpConfiguration": null,
+        "DnsSettings": null,
+        "DdosSettings": {
+          "ProtectionMode": null,
+          "DdosProtectionPlan": null
+        },
+        "IpTags": [],
+        "IpAddress": null,
+        "PublicIpAddressVersion": null,
+        "IdleTimeoutInMinutes": null,
+        "Zones": [],
+        "ProvisioningState": null,
+        "PublicIpPrefix": null,
+        "ResourceGroupName": null,
+        "Location": null,
+        "ResourceGuid": null,
+        "Type": null,
+        "Tag": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/publicIPAddresses/pip-02"
+      },
+      "PublicIPPrefix": null,
+      "GatewayLoadBalancer": null,
+      "Name": "fe-02",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-02"
+    }
+  ],
+  "BackendAddressPools": [
+    {
+      "ProvisioningState": "Succeeded",
+      "BackendIpConfigurations": [
+        {
+          "PrivateIpAddressVersion": null,
+          "LoadBalancerBackendAddressPools": [],
+          "LoadBalancerInboundNatRules": [],
+          "Primary": false,
+          "ApplicationGatewayBackendAddressPools": [],
+          "ApplicationSecurityGroups": [],
+          "VirtualNetworkTaps": [],
+          "PrivateLinkConnectionProperties": null,
+          "GatewayLoadBalancer": null,
+          "PrivateIpAddress": null,
+          "PrivateIpAllocationMethod": null,
+          "Subnet": null,
+          "PublicIpAddress": null,
+          "ProvisioningState": null,
+          "Name": null,
+          "Etag": null,
+          "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Compute/virtualMachineScaleSets/vmss-01/virtualMachines/0/networkInterfaces/vmss-01-nic-01/ipConfigurations/ipconfig1"
+        }
+      ],
+      "LoadBalancerBackendAddresses": [],
+      "LoadBalancingRules": [],
+      "OutboundRule": null,
+      "TunnelInterfaces": [],
+      "Name": "be-01",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/backendAddressPools/be-01"
+    }
+  ],
+  "LoadBalancingRules": [],
+  "Probes": [
+    {
+      "Protocol": "Tcp",
+      "Port": 80,
+      "IntervalInSeconds": 5,
+      "NumberOfProbes": 2,
+      "ProbeThreshold": 1,
+      "RequestPath": null,
+      "ProvisioningState": "Succeeded",
+      "LoadBalancingRules": [],
+      "Name": "probe-01",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/probes/probe-01"
+    }
+  ],
+  "InboundNatRules": [
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 9080,
+      "BackendPort": 8080,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Compute/virtualMachineScaleSets/vmss-01/virtualMachines/0/networkInterfaces/vmss-01-nic-01/ipConfigurations/ipconfig1"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "natpool-01.0",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatRules/natpool-01.0"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 9180,
+      "BackendPort": 8180,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Compute/virtualMachineScaleSets/vmss-01/virtualMachines/0/networkInterfaces/vmss-01-nic-01/ipConfigurations/ipconfig2"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "natpool-02.0.vmss-01-nic-01.ipconfig2",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatRules/natpool-02.0.vmss-01-nic-01.ipconfig2"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPort": 9280,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+      },
+      "BackendIPConfiguration": {
+        "PrivateIpAddressVersion": null,
+        "LoadBalancerBackendAddressPools": [],
+        "LoadBalancerInboundNatRules": [],
+        "Primary": false,
+        "ApplicationGatewayBackendAddressPools": [],
+        "ApplicationSecurityGroups": [],
+        "VirtualNetworkTaps": [],
+        "PrivateLinkConnectionProperties": null,
+        "GatewayLoadBalancer": null,
+        "PrivateIpAddress": null,
+        "PrivateIpAllocationMethod": null,
+        "Subnet": null,
+        "PublicIpAddress": null,
+        "ProvisioningState": null,
+        "Name": null,
+        "Etag": null,
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Compute/virtualMachineScaleSets/vmss-01/virtualMachines/0/networkInterfaces/vmss-01-nic-02/ipConfigurations/ipconfig1"
+      },
+      "FrontendPortRangeStart": null,
+      "FrontendPortRangeEnd": null,
+      "BackendAddressPool": null,
+      "Name": "natpool-03.0.vmss-01-nic-02.ipconfig1",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatRules/natpool-03.0.vmss-01-nic-02.ipconfig1"
+    }
+  ],
+  "InboundNatPools": [
+    {
+      "Protocol": "Tcp",
+      "FrontendPortRangeStart": 9080,
+      "FrontendPortRangeEnd": 9085,
+      "BackendPort": 8080,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+      },
+      "Name": "natpool-01",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatPools/natpool-01"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPortRangeStart": 9180,
+      "FrontendPortRangeEnd": 9185,
+      "BackendPort": 8180,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+      },
+      "Name": "natpool-02",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatPools/natpool-02"
+    },
+    {
+      "Protocol": "Tcp",
+      "FrontendPortRangeStart": 9280,
+      "FrontendPortRangeEnd": 9285,
+      "BackendPort": 3389,
+      "IdleTimeoutInMinutes": 4,
+      "EnableFloatingIP": false,
+      "EnableTcpReset": false,
+      "ProvisioningState": "Succeeded",
+      "FrontendIPConfiguration": {
+        "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/frontendIPConfigurations/fe-01"
+      },
+      "Name": "natpool-03",
+      "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+      "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01/inboundNatPools/natpool-03"
+    }
+  ],
+  "OutboundRules": [],
+  "ExtendedLocation": null,
+  "ResourceGroupName": "rg-007-basic-lb-int-no-lbr-nat-pool",
+  "Location": "eastus",
+  "ResourceGuid": "b43211f7-531f-4ea7-b51a-a806fc6c9a84",
+  "Type": "Microsoft.Network/loadBalancers",
+  "Tag": null,
+  "Name": "lb-basic-01",
+  "Etag": "W/\u002211c1a29f-06e8-4822-8155-641a3be385b5\u0022",
+  "Id": "/subscriptions/24730882-456b-42df-a6f8-8590ca6e4e37/resourceGroups/rg-007-basic-lb-int-no-lbr-nat-pool/providers/Microsoft.Network/loadBalancers/lb-basic-01"
+}
